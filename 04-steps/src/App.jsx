@@ -8,7 +8,14 @@ export default function App() {
   return (
     <div>
       <Steps />
-      <Steps />
+      <StepMessage>
+        <p>Pass in context</p>
+        <p>🤞</p>
+      </StepMessage>
+      <StepMessage>
+        <p>Read children prop</p>
+        <p>😎</p>
+      </StepMessage>
     </div>
   );
 }
@@ -44,24 +51,23 @@ function Steps() {
                 bgColor="#e7e7e7"
                 textColor="#333"
                 onClick={() => alert(`Learn how to ${messages[step - 1]}`)}
+                text=""
               >
                 Learn how
               </Button>
             </div>
           </StepMessage>
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7958f2", color: "#fff" }}
+            <Button
+              bgColor={"#7958f2"}
+              textColor={"#fff"}
               onClick={handlePrevious}
             >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7958f2", color: "#fff" }}
-              onClick={handleNext}
-            >
-              Next
-            </button>
+              👈<span>Previous</span>
+            </Button>
+            <Button bgColor={"#7958f2"} textColor={"#fff"} onClick={handleNext}>
+              <span>Next</span>👉
+            </Button>
           </div>
         </div>
       )}
@@ -77,7 +83,7 @@ function StepMessage({ step, children }) {
     </div>
   );
 }
-function Button({ textColor, bgColor, onClick, children }) {
+function Button({ bgColor, textColor, onClick, children }) {
   return (
     <button
       style={{ backgroundColor: bgColor, color: textColor }}
