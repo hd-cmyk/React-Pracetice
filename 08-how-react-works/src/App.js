@@ -25,7 +25,7 @@ export default function App() {
     </div>
   );
 }
-
+console.log();
 function Tabbed({ content }) {
   const [activeTab, setActiveTab] = useState(0);
 
