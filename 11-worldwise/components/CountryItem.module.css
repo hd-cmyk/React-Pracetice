@@ -17,8 +17,9 @@
   font-size: 3rem;
   line-height: 1;
 }
-.countryItem :global(img.emoji) {
+/* .countryItem :global(img.emoji) {
   width: 2.6rem;
   height: 2.6rem;
   vertical-align: -0.25rem;
 }
+ */

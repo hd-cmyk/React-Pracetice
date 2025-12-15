@@ -5,3 +5,6 @@
   display: flex;
   position: relative;
 }
+.appLayout {
+  height: 100vh;
+}
