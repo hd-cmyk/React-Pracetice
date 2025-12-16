@@ -61,7 +61,6 @@ function Form() {
   if (isLoadingPosition) return <Spinner />;
   if (geocodingError) return <Message message={geocodingError} type="error" />;
   async function handleSubmit(e) {
-    console.log(123456789);
     e.preventDefault();
     if (!cityName || !date) return;
     const newCity = {
