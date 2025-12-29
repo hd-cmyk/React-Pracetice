@@ -1,12 +1,19 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-
+import {
+  TiHomeOutline,
+  TiCalculator,
+  TiCalendarOutline,
+  TiCogOutline,
+  TiUserOutline,
+} from "react-icons/ti";
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 `;
 
-const Link = styled.a`
+const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
     display: flex;
@@ -44,3 +51,43 @@ const Link = styled.a`
     color: var(--color-brand-600);
   }
 `;
+function MainNav() {
+  return (
+    <div>
+      <NavList>
+        <li>
+          <StyledNavLink to="/dashboard">
+            <TiHomeOutline />
+            <span>Home</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/bookings">
+            <TiCalendarOutline />
+            <span>Bookings</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/cabins">
+            <TiHomeOutline />
+            <span>Cabins</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/users">
+            <TiUserOutline />
+            <span>Users</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/settings">
+            <TiCogOutline />
+            <span>Settings</span>
+          </StyledNavLink>
+        </li>
+      </NavList>
+    </div>
+  );
+}
+
+export default MainNav;
