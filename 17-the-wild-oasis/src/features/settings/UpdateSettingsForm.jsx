@@ -18,9 +18,7 @@ function UpdateSettingsForm() {
   const { updateSetting, isUpdating } = useUpdateSettings();
   function handleUpdate(e, settingKey) {
     const Value = e.target.value;
-    console.log(12345);
     updateSetting({ [settingKey]: Value });
-    console.log(123456789);
   }
   if (isLoading) return <Spinner />;
   return (
