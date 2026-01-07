@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { updateSetting as updateSettingApi } from "../../services/apiSettings";
 export function useUpdateSettings() {
   const queryClient = useQueryClient();
-  const { mutate: updateSetting, isLoading: isUpdating } = useMutation({
+  const { mutate: updateSetting, isPending: isUpdating } = useMutation({
     mutationFn: updateSettingApi,
     onSuccess: () => {
       console.log(123);
