@@ -9,9 +9,9 @@ import Pagination from "../../ui/Pagination";
 function BookingTable() {
   const { isLoading, bookings, count } = useBookings();
   // const [searchParams] = useSearchParams();
-
   if (isLoading) return <Spinner />;
-  if (bookings.length === 0) return <Empty resourceName="bookings" />;
+  if (!bookings.length) return <Empty resourceName="bookings" />;
+
   /*   //1) Filter
   let filteredBookings = bookings;
   if (filterValue !== "all") {
