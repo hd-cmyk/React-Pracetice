@@ -16,9 +16,7 @@ function App() {
         const res = await fetch(
           `https://api.frankfurter.app/latest?amount=${amount}&from=${fromCur}&to=${toCur}`
         );
-        //await让代码“暂停”等待 Promise 完成
         const data = await res.json();
-        console.log(data);
         setConverted(data.rates[toCur]);
         setIsLoading(false);
       }

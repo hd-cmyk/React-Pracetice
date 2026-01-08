@@ -8,8 +8,7 @@ export function useSignUp() {
     error,
   } = useMutation({
     mutationFn: signupApi,
-    onSuccess: (data) => {
-      console.log("data", data);
+    onSuccess: () => {
       toast.success(
         "Signup successful! Please check your email to confirm your account."
       );
