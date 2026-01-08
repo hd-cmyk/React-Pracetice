@@ -18,7 +18,7 @@ export function useCheckin() {
       queryClient.invalidateQueries({ active: true });
       navigate("/");
     },
-    onError: (err) => toast.error("There was an error while checking in"),
+    onError: () => toast.error("There was an error while checking in"),
   });
   return { checkin, isCheckingIn };
 }
