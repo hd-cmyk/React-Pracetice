@@ -1,5 +1,4 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "../_lib/auth";
+import { auth } from "../_lib/auth";
 import { getBookedDatesByCabinId, getSettings } from "../_lib/data-service";
 import DateSelector from "./DateSelector";
 import LoginMessage from "./LoginMessage";
@@ -10,7 +9,7 @@ async function Reservation({ cabin }) {
     getSettings(),
     getBookedDatesByCabinId(cabin.id),
   ]);
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   return (
     <div className="grid grid-cols-2 border border-primary-800 min-h-[400px]">
